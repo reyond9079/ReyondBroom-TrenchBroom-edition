@@ -7,6 +7,29 @@
 
 [English](README.md) · **Русский** · [Руководство с иллюстрациями](https://reyond9079.github.io/ReyondBroom/index.ru.html) · [Полный справочник (EN)](https://reyond9079.github.io/ReyondBroom/reference.html) · [Релизы и контрольные суммы](https://github.com/reyond9079/ReyondBroom/releases/latest)
 
+## Что добавляет ReyondBroom
+
+По сравнению с базовым TrenchBroom 2026.2 в ReyondBroom доступны следующие дополнительные инструменты и возможности. Каждая ссылка ведёт к инструкции с иллюстрациями.
+
+| Возможность | Что можно сделать |
+| --- | --- |
+| [Выпуклый Bevel](https://reyond9079.github.io/ReyondBroom/index.ru.html#bevel) | Скруглять рёбра, вершины или внешний контур выделенных граней. Настраивать радиус/отступ, сегменты и выпуклый профиль, ограничивать размер через Clamp внутри каждого браша и видеть результат прямо на сцене. |
+| [Fracture](https://reyond9079.github.io/ReyondBroom/index.ru.html#fracture) | Разделять браш на 2–128 осколков Вороного с заданным Seed, назначать материал срезов, раздвигать осколки и при необходимости создавать отдельные `func_wall`. |
+| [Perforate](https://reyond9079.github.io/ReyondBroom/index.ru.html#perforate) | Создавать случайные сквозные многоугольные отверстия с заданными количеством, числом сторон, диапазоном диаметров и расстоянием между ними; сохранять и выделять подходящие вставки `func_wall`. |
+| [Settle](https://reyond9079.github.io/ReyondBroom/index.ru.html#settle) | Укладывать браши с физикой Bullet, трением, отскоком и начальным импульсом. Учитывать столкновения с брашами сцены и патчами Quake 3, затем сохранять результат как статическую геометрию карты. |
+| [Terrain](https://reyond9079.github.io/ReyondBroom/index.ru.html#terrain), [Sculpt](https://reyond9079.github.io/ReyondBroom/index.ru.html#sculpt) и [Rock](https://reyond9079.github.io/ReyondBroom/index.ru.html#rock) | Генерировать рельеф и камни, редактировать рельеф инструментом скульптинга. |
+| [Polygon Cut / Spawn](https://reyond9079.github.io/ReyondBroom/index.ru.html#polygon-cut) | Рисовать многоугольные контуры для вырезов в существующей геометрии или создания новых объёмов. |
+| [Inset](https://reyond9079.github.io/ReyondBroom/index.ru.html#inset), [Spin](https://reyond9079.github.io/ReyondBroom/index.ru.html#spin) и [Bezier Bend](https://reyond9079.github.io/ReyondBroom/index.ru.html#bezier-bend) | Создавать внутренние отступы поверхностей, цепочки экструзий с поворотом и изгибать группы вдоль кривой. |
+| [Subdivision](https://reyond9079.github.io/ReyondBroom/index.ru.html#subdivision), [Subtract 2](https://reyond9079.github.io/ReyondBroom/index.ru.html#subtract-2) и [Convert Triang Brushes](https://reyond9079.github.io/ReyondBroom/index.ru.html#convert-triang) | Добавлять разбиения геометрии, применять альтернативное вычитание и преобразовывать триангулированные брашевые структуры. |
+| [Массивы](https://reyond9079.github.io/ReyondBroom/index.ru.html#array-line) и [Symmetry](https://reyond9079.github.io/ReyondBroom/index.ru.html#symmetry) | Создавать линейные, круговые и случайные размещения, поддерживать симметричные копии. |
+| [Grid Rotation](https://reyond9079.github.io/ReyondBroom/index.ru.html#grid-rotation), [Auto Integer Snap](https://reyond9079.github.io/ReyondBroom/index.ru.html#snap-integer) и [XYZ](https://reyond9079.github.io/ReyondBroom/index.ru.html#xyz) | Работать с повёрнутой сеткой, привязывать геометрию к целым координатам и задавать точные позиции. |
+| [Коллекции префабов](https://reyond9079.github.io/ReyondBroom/index.ru.html#prefabs) и [EntityList](https://reyond9079.github.io/ReyondBroom/index.ru.html#entity-list) | Повторно использовать сохранённые конструкции и находить размещённые сущности в отдельном списке. |
+| [Управление браузерами материалов и сущностей](https://reyond9079.github.io/ReyondBroom/index.ru.html#material-browser) | Настраивать размер предпросмотра, подключать папки текстур и выбирать палитру экспорта WAD. |
+| [Предпросмотры Quake](https://reyond9079.github.io/ReyondBroom/index.ru.html#lighting) и [Spawn Master](https://reyond9079.github.io/ReyondBroom/index.ru.html#spawn-master) | Просматривать свет, небо, двери, кнопки, лифты, поезда и камеры intermission; создавать схемы появления сущностей через телепортационные комнаты. |
+| [Unity Sync](https://reyond9079.github.io/ReyondBroom/index.ru.html#unity-sync) | Экспортировать геометрию и текстуры карты в префаб Unity с настраиваемым масштабом. |
+
+Bevel создаёт только выпуклые браши. Флаг **No collide** в Fracture создаёт сущности `func_wall`, но **не отключает** столкновения в Settle. Игровые предпросмотры приблизительны и не заменяют проверку скомпилированной карты.
+
 ![ReyondBroom: предпросмотр выпуклого Bevel в окне карты](docs/captures/reyond/bevel-preview.png)
 
 ## Всё для построения уровня

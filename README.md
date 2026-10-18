@@ -7,6 +7,29 @@
 
 **English** · [Русский](README.ru.md) · [Illustrated handbook](https://reyond9079.github.io/ReyondBroom/) · [Full reference](https://reyond9079.github.io/ReyondBroom/reference.html) · [Releases and checksums](https://github.com/reyond9079/ReyondBroom/releases/latest)
 
+## What ReyondBroom adds
+
+Compared with the base TrenchBroom 2026.2 editor, ReyondBroom includes the following additional tools and workflows. Each link opens illustrated usage instructions.
+
+| Feature | What you can do |
+| --- | --- |
+| [Convex Bevel](https://reyond9079.github.io/ReyondBroom/#bevel) | Round edges, vertices or the outside boundary of selected faces. Adjust radius/offset, segments and convex profile, with per-brush Clamp and preview directly in the scene. |
+| [Fracture](https://reyond9079.github.io/ReyondBroom/#fracture) | Split a brush into 2–128 seeded Voronoi fragments, set the cut material, separate the pieces and optionally create individual `func_wall` entities. |
+| [Perforate](https://reyond9079.github.io/ReyondBroom/#perforate) | Create random polygonal through-holes with configurable count, contour sides, diameter range and spacing; optionally retain and select matching `func_wall` plugs. |
+| [Settle](https://reyond9079.github.io/ReyondBroom/#settle) | Drop and arrange brushes with Bullet physics, friction, bounce and an initial kick. Collide with scene brushes and Quake 3 patches, then apply the result as static map geometry. |
+| [Terrain](https://reyond9079.github.io/ReyondBroom/#terrain), [Sculpt](https://reyond9079.github.io/ReyondBroom/#sculpt) and [Rock](https://reyond9079.github.io/ReyondBroom/#rock) | Generate terrain and rocks, then reshape terrain with sculpting controls. |
+| [Polygon Cut / Spawn](https://reyond9079.github.io/ReyondBroom/#polygon-cut) | Draw polygonal outlines to cut existing geometry or create new volumes. |
+| [Inset](https://reyond9079.github.io/ReyondBroom/#inset), [Spin](https://reyond9079.github.io/ReyondBroom/#spin) and [Bezier Bend](https://reyond9079.github.io/ReyondBroom/#bezier-bend) | Inset surfaces, generate chains of rotated extrusions and bend grouped geometry along a curve. |
+| [Subdivision](https://reyond9079.github.io/ReyondBroom/#subdivision), [Subtract 2](https://reyond9079.github.io/ReyondBroom/#subtract-2) and [Convert Triang Brushes](https://reyond9079.github.io/ReyondBroom/#convert-triang) | Add geometry divisions, use an alternative subtraction workflow and convert triangulated brush structures. |
+| [Arrays](https://reyond9079.github.io/ReyondBroom/#array-line) and [Symmetry](https://reyond9079.github.io/ReyondBroom/#symmetry) | Create linear, radial and randomized arrangements and maintain symmetric copies. |
+| [Grid Rotation](https://reyond9079.github.io/ReyondBroom/#grid-rotation), [Auto Integer Snap](https://reyond9079.github.io/ReyondBroom/#snap-integer) and [XYZ editing](https://reyond9079.github.io/ReyondBroom/#xyz) | Align work to a rotated grid, snap geometry to integer coordinates and edit exact positions. |
+| [Prefab Collections](https://reyond9079.github.io/ReyondBroom/#prefabs) and [EntityList](https://reyond9079.github.io/ReyondBroom/#entity-list) | Reuse saved assemblies and find placed entities in a dedicated list. |
+| [Material and entity browser controls](https://reyond9079.github.io/ReyondBroom/#material-browser) | Adjust browser previews, load texture folders and choose a WAD export palette. |
+| [Quake previews](https://reyond9079.github.io/ReyondBroom/#lighting) and [Spawn Master](https://reyond9079.github.io/ReyondBroom/#spawn-master) | Preview lighting, sky, doors, buttons, lifts, trains and intermission cameras; generate teleport-closet spawning setups. |
+| [Unity Sync](https://reyond9079.github.io/ReyondBroom/#unity-sync) | Export map geometry and textures into a Unity prefab with configurable scale. |
+
+Bevel produces convex brushes only. Fracture's **No collide** option creates `func_wall` entities; it does **not** disable Settle collisions. Game previews are approximate and do not replace testing a compiled map.
+
 ![ReyondBroom: convex Bevel preview in the map viewport](docs/captures/reyond/bevel-preview.png)
 
 ## Build the whole level
