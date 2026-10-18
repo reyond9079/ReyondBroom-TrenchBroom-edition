@@ -1,0 +1,33 @@
+name: Compact verified Windows release
+
+on:
+  push:
+    branches: [ReyondBroom]
+    paths: ['.github/workflows/compact-windows.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compact-windows-release
+  cancel-in-progress: false
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: v2026.2-reyond.2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify the released editor
+        run: |
+          gh release download "$RELEASE_TAG" --pattern 'ReyondBroom-Windows.zip*' --dir original
+          cd original
+          sha256sum --check ReyondBroom-Windows.zip.sha256
+      - name: Remove build-only files and verify retained bytes
+        run: python3 scripts/package-windows.py --source-zip original/ReyondBroom-Windows.zip --output compact/ReyondBroom-Windows.zip
+      - name: Replace Windows archive and checksum
+        run: gh release upload "$RELEASE_TAG" compact/ReyondBroom-Windows.zip compact/ReyondBroom-Windows.zip.sha256 --clobber

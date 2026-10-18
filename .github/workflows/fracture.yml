@@ -76,7 +76,8 @@ jobs:
             Invoke-WebRequest "https://raw.githubusercontent.com/qt/qtbase/v$qtVersion/LICENSES/$license" -OutFile "$dir/licenses/Qt/$license"
           }
           @{ commit = $env:GITHUB_SHA; qt = $qtVersion; source = "https://github.com/$env:GITHUB_REPOSITORY/tree/$env:GITHUB_SHA" } | ConvertTo-Json | Set-Content "$dir/build-info.json"
-          Compress-Archive -Path "$dir/*" -DestinationPath ReyondBroom-Windows.zip
+          python scripts/package-windows.py --directory "$dir" --output ReyondBroom-Windows.zip
+          if ($LASTEXITCODE -ne 0) { throw 'Runtime package validation failed' }
       - uses: actions/upload-artifact@v4
         with:
           name: ReyondBroom-Windows
